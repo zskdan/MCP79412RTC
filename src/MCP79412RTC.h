@@ -79,11 +79,11 @@ class MCP79412RTC
         void alarmPolarity(bool polarity);
         bool isRunning();
         void vbaten(bool enable);
+        byte ramRead(byte addr);
+        void ramWrite(byte addr, byte value);
 
     private:
-        static void ramWrite(byte addr, byte value);
         static void ramWrite(byte addr, byte *values, byte nBytes);
-        static byte ramRead(byte addr);
         static void ramRead(byte addr, byte *values, byte nBytes);
         static byte eepromWait();
         static uint8_t dec2bcd(uint8_t num);
